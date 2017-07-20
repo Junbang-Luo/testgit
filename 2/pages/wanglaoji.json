@@ -1,0 +1,28 @@
+{
+    "error": 0,
+    "list": [{
+        "id": "$",
+        "imgUrl": "../img/test/1.JPG"
+    }, {
+        "id": "$",
+        "imgUrl": "../img/test/2.JPG"
+    },{
+        "id": "$",
+        "imgUrl": "../img/test/3.JPG"
+    }, {
+        "id": "$",
+        "imgUrl": "../img/test/4.jpg"
+    },{
+        "id": "$",
+        "imgUrl": "../img/test/5.jpg"
+    }, {
+        "id": "$",
+        "imgUrl": "../img/test/6.JPG"
+    },{
+        "id": "$",
+        "imgUrl": "../img/test/7.jpg"
+    }, {
+        "id": "$",
+        "imgUrl": "../img/test/8.jpg"
+    }]
+}

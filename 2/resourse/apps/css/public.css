@@ -1,0 +1,448 @@
+@charset "UTF-8";
+
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+pre,
+textarea {
+    overflow: auto
+}
+
+hr,
+img,
+legend {
+    border: 0
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+hr,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block
+}
+
+.list-click-more a,
+.ui-botton-tab,
+.ui-button-tab,
+.ui-tab-list .ui-list-ab {
+    transition: background-color .4s ease-out, color .4s ease-out
+}
+
+.fn-clearfix:after,
+.home-friend-link .collapse-item,
+.ui-box:after {
+    clear: both
+}
+
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+audio,
+canvas,
+progress,
+video {
+    display: inline-block;
+    vertical-align: baseline
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0
+}
+
+[hidden],
+template {
+    display: none
+}
+
+a {
+    background-color: transparent;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    color: #333
+}
+
+a:active,
+a:hover {
+    outline: 0
+}
+
+abbr[title] {
+    border-bottom: 1px dotted
+}
+
+b,
+optgroup,
+strong {
+    font-weight: 700
+}
+
+mark {
+    background: #ff0;
+    color: #000
+}
+
+small {
+    font-size: 80%
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sup {
+    top: -.5em
+}
+
+sub {
+    bottom: -.25em
+}
+
+svg:not(:root) {
+    overflow: hidden
+}
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0
+}
+
+button {
+    overflow: visible
+}
+
+button,
+select {
+    text-transform: none
+}
+
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+
+button[disabled],
+html input[disabled] {
+    cursor: default
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0
+}
+
+input {
+    line-height: normal
+}
+
+input[type=checkbox],
+input[type=radio] {
+    box-sizing: border-box;
+    padding: 0
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    height: auto
+}
+
+input[type=search] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box
+}
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+fieldset {
+    border: 1px solid silver
+}
+
+textarea {
+    resize: vertical
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+html {
+    font-size: 10px;
+    line-height: 1.4;
+    -webkit-tap-highlight-color: transparent;
+    background: #efefef
+}
+
+body {
+    font-size: .24rem;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "\5FAE\8F6F\96C5\9ED1", sans-serif
+}
+
+article,
+aside,
+blockquote,
+body,
+button,
+code,
+dd,
+details,
+div,
+dl,
+dt,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+hr,
+input,
+legend,
+li,
+menu,
+nav,
+ol,
+p,
+pre,
+section,
+td,
+textarea,
+th,
+ul {
+    margin: 0;
+    padding: 0
+}
+
+abbr,
+acronym {
+    border: 0;
+    font-variant: normal
+}
+
+del {
+    text-decoration: line-through
+}
+
+.nav-dropbox .ui-list-item a:hover,
+.ui-button,
+.ui-button:hover,
+.ui-list-item a:hover,
+a,
+a:hover,
+ins {
+    text-decoration: none
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+    font-style: normal;
+    font-weight: 400
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle
+}
+
+hr {
+    height: 1px;
+    border-top: 1px solid #ccc;
+    margin: .2em 0;
+    padding: 0
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none
+}
+
+ol,
+ul {
+    list-style: none
+}
+
+caption,
+th {
+    text-align: left
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: 400
+}
+
+q:after,
+q:before {
+    content: ''
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    font-size: 1em
+}
+/*//wanglaoji*/
+.wrapper{
+	max-width: 720px;
+	margin: 0 auto;
+}
+.imgMW100{
+	max-width: 100%;
+	width: 100%;
+}
+
+
+@media only screen and (min-width:320px) {
+    html {
+        font-size: 50px
+    }
+    body {
+        font-size: 12px
+    }
+}
+
+@media only screen and (min-width:360px) {
+    html {
+        font-size: 56.25px
+    }
+    body {
+        font-size: 13.5px
+    }
+}
+
+@media only screen and (min-width:375px) {
+    html {
+        font-size: 58.59px
+    }
+    body {
+        font-size: 14.06px
+    }
+}
+
+@media only screen and (min-width:384px) {
+    html {
+        font-size: 60px
+    }
+    body {
+        font-size: 14.4px
+    }
+}
+
+@media only screen and (min-width:393px) {
+    html {
+        font-size: 61.41px
+    }
+    body {
+        font-size: 14.74px
+    }
+}
+
+@media only screen and (min-width:414px) {
+    html {
+        font-size: 64.69px
+    }
+    body {
+        font-size: 15.53px
+    }
+}
+
+@media only screen and (min-width:480px) {
+    html {
+        font-size: 75px
+    }
+    body {
+        font-size: 18px
+    }
+}
+
+@media only screen and (min-width:540) {
+    html {
+        font-size: 84.375
+    }
+    body {
+        font-size: 20.25
+    }
+}
+
+@media only screen and (min-width:640px) {
+    html {
+        font-size: 100px
+    }
+    body {
+        font-size: 24px
+    }
+}
+
+@media only screen and (min-width:720px) {
+    html {
+        font-size: 112.5px
+    }
+    body {
+        font-size: 27px
+    }
+}

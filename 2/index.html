@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>王老吉凉茶</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="resourse/apps/css/public.css" rel="stylesheet">
+</head>
+<style>
+.wrapper {
+    background-image: url(img/bgfull.png);
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    /*padding-left: .1rem;*/
+    padding-right: .05rem;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-color: #fff;
+}
+
+.container {
+    width: 100%;
+    background-image: url(img/beiban.png);
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    /*height: 200px;*/
+}
+
+.session-box {
+    width: 80%;
+    position: relative;
+    margin: 0 auto;
+    /*background-color: #efefef;*/
+    /*border-bottom: 1px solid black;*/
+}
+
+.pFontset {
+    color: #305b93;
+    font-size: .25rem;
+    line-height: .35rem;
+    padding-left: .2rem;
+    padding-right: .2rem;
+    padding-top: .7rem;
+}
+
+.img-box.left-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-18%, -33%);
+}
+
+.img-box.right-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(21%, -28%);
+}
+
+.img-box img {
+    width: 2.8rem;
+}
+
+.s2-content {
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+}
+
+.sb2-left {
+    padding-top: .4rem;
+    width: 60%;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+.sb2-right {
+    height: 100%;
+    width: 40%;
+    padding-top: 1rem;
+    /*text-ali
+    gn: center;*/
+}
+
+#enter-game-btn {
+    position: absolute;
+    width: 2.8rem;
+    height: 1.8rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    background-color: transparent;
+    border: none;
+    background-image: url(img/btn.png);
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    outline: none;
+}
+
+.sb2-right p {
+    color: #305b93;
+}
+.leftimg{
+    width: 
+}
+.sb-content{
+    box-sizing: border-box;
+    display: flex;
+    height: 100%; 
+    padding-top: .6rem;
+}
+.sb-left{
+    box-sizing: border-box;
+    width: 50%;
+    padding-right: .1rem;
+    padding-bottom: .4rem;
+    padding-top: .35rem;
+    padding-left: .2rem;
+}
+.sb-right{
+    padding-top: .5rem;
+    width: 70%;
+    position: relative;
+}
+.moreBox a{
+    position: absolute;
+    right: .1rem;
+    bottom: .2rem;
+    color: #305b93;
+}
+.sb-right p{
+    text-align: center;
+    color: #305b93;
+}
+.drag-btn{
+    position: absolute;
+    top: 50%;
+    right:-.5rem;
+    width: .25rem;
+    height: .5rem;
+}
+</style>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="session-box" id="sb1">
+                <div class="img-box left-img">
+                    <img src="img/huodong-nav.png" alt="event intr">
+                </div>
+                <div class="s1-content">
+                    <p class="pFontset">步入炎热的夏季，户外工作者坚守岗位，在烈日炙烤下挥汗如雨，是我们真正的“烈日英雄”。王老吉将在夏季期间开启“我的烈日英雄”公益行动，通过线上线下的系列活动，呼吁社会各界给予户外高温工作者更多关怀，和王老吉一起为烈日英雄们送清凉。向烈日英雄们致敬！</p>
+                </div>
+                <img src="img/drag-btn.png" alt="" class="drag-btn">
+            </div>
+            <div class="session-box" id="sb2">
+                <div class="img-box right-img">
+                    <img src="img/shengshi-nav.png" alt="">
+                </div>
+                <div class="s2-content">
+                    <div class="sb2-left">
+                        <button id="enter-game-btn"></button>
+                    </div>
+                    <div class="sb2-right">
+                        <p class="">轻松晒“汗颜”， 随手做公益！ 快来和王老吉一起， 为户外高温工作者 送清凉吧！
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="session-box" id="sb3">
+                <div class="img-box left-img">
+                    <img src="img/news-nav.png" alt="">
+                </div>
+                <div class="sb-content">
+                    <div class="sb-left">
+                        <img src="img/news-png.png" alt="" class="imgMW100">
+                    </div>
+                    <div class="sb-right">
+                        <p>2017年7月22日</p>
+                        <p>王老吉“高温关爱日”发布会</p> 
+                        <p>敬请关注！</p>
+                        <div class="moreBox">
+                            <a href="pages/new.html"> > > >更多</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="session-box" id="sb4">
+                <div class="img-box right-img">
+                    <img src="img/jingcai-nav.png" alt="">
+                </div>
+                <div class="sb-content">
+                    <div class="sb-left">
+                        <img src="img/jingcai-png.png" alt="" class="imgMW100">
+                    </div>
+                    <div class="sb-right">
+                        <p>7月22日-8月21日</p>
+                        <p>王老吉“烈日战车”全国巡游</p>
+                        <p>敬请期待！
+                        </p>
+                        <div class="moreBox">
+                            <a href="pages/moment.html"> > > >更多</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="resourse/jquery/jquery.js"></script>
+    <script>
+    $(function() {
+        // 750:2253
+        console.log("start");
+        var WIDTH = $(window).width()>720?720:$(window).width();
+        var HEIGHT = WIDTH / 750 * 2253;
+        $(".wrapper").height(HEIGHT);
+        var mtop = HEIGHT * 32 / 100;
+        var cHeight = HEIGHT / 2253 * 1482
+        console.log($(".wrapper").height());
+        console.log(WIDTH);
+        $(".container").height(cHeight);
+        $(".wrapper").css("padding-top", mtop + "px")
+        $("#sb1").height(cHeight * 26.5 / 100)
+        $("#sb2").height(cHeight * 24.5 / 100)
+        $("#sb3").height(cHeight * 24 / 100)
+        $("#sb4").height(cHeight * 23.5 / 100)
+
+        //btn
+        $('#enter-game-btn').click(function(event) {
+            /* Act on the event */
+            location.href = "http://dxinlan.com/wlj/index.php?id=wx0"
+        });
+    })
+    </script>
+</body>
+
+</html>

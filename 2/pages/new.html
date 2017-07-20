@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>王老吉凉茶</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="../resourse/apps/css/public.css" rel="stylesheet">
+</head>
+<style>
+.wrapper {
+    background-image: url(../img/bgfull.png);
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    /*padding-left: .1rem;*/
+    padding-right: .05rem;
+    box-sizing: border-box;
+    width: 100%;
+    padding-bottom: .2rem;
+    background-repeat: no-repeat;
+    background-color: #fff;
+}
+
+.container {
+	box-sizing: border-box;
+    width: 93%;
+    position: relative;
+    background-image: url(../img/new-bg.png);
+    margin: 0 auto;
+    padding: .2rem;
+}
+
+.contentbg {
+    background-color: #80d5f8;
+    opacity: .5;
+    margin: .2rem;
+    width: 100%;
+    height: 100%;
+}
+.img-box{
+	position: absolute;
+	top: -.5rem;
+	left: -.15rem;
+	width: 2.5rem;
+
+}
+.content{
+	display: flex;
+	box-sizing: border-box;
+	padding-top: .2rem;
+	flex-wrap: wrap;
+	padding-bottom: .2rem;
+}
+.content-box{
+	width: 50%;
+	box-sizing: border-box;
+	padding: .1rem;
+}
+.content-box img{
+    height: 2rem;
+}
+.content-box p {
+	color: #305b93;
+	text-align: center;
+	margin-top: .1rem;
+}
+</style>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="contentbg"></div>
+            <div class="img-box">
+                <img src="../img/news-nav.png" class="imgMW100" alt="news">
+            </div>
+            <div class="content" id="pageContent">
+            </div>
+        </div>
+    </div>
+    <script src="../resourse/jquery/jquery.js"></script>
+    <script>
+    $(function() {
+        // 750:2253
+        console.log("start");
+        var WIDTH = $(window).width()>720?720:$(window).width();
+        var winHEIGHT = $(window).height();
+        console.log(winHEIGHT);
+        var HEIGHT = WIDTH / 750 * 2253;
+        // $(".wrapper").height(HEIGHT);
+        var mtop = HEIGHT * 25 / 100;
+        var cHeight = HEIGHT / 2253 * 1482
+        $(".wrapper").css("padding-top", mtop + "px")
+        console.log($(".wrapper").height());
+        var newsLIST = [];
+        $.ajax({
+            url: 'http://brand.wljhealth.com/activity/2017_my_sun_hero/api/v1/getNews',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                currentPage: 1,
+                pageSize: 10
+            },
+            success: function(res) {
+                console.log(res)
+                if (res.error == 0) {
+                    console.log("hh")
+                    newsLIST = res.data.list;
+                     if(newsLIST.length<4){
+                        $(".wrapper").height(winHEIGHT-mtop);
+                    }
+                    var htmltxt = '';
+                    for (var i = 0; i < newsLIST.length; i++) {
+                        htmltxt += '<a href="'+newsLIST[i].linkUrl+'" class="content-box">\
+                        <div class="content-img">\
+                            <img src="'+newsLIST[i].imgUrl+'" alt="" class="\imgMW100">\
+                            <div class="content-title">\
+                                <p>'+ newsLIST[i].title
+                                +'</p>\
+                            </div>\
+                        </div>\
+                </a>';
+                    }
+                    $('#pageContent').html(htmltxt);
+                } else {
+                    alert("请求结果出错！请重试")
+                }
+            },
+        })
+    })
+    </script>
+</body>
+
+</html>

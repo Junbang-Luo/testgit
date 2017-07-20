@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>王老吉凉茶</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="../resourse/apps/css/moment.css">
+    <link href="../resourse/apps/css/public.css" rel="stylesheet">
+</head>
+<style>
+html,
+body {
+    background-color: #fff;
+}
+
+.wrapper {
+    background-image: url(../img/bgfull.png);
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    /*padding-left: .1rem;*/
+    padding-right: .05rem;
+    box-sizing: border-box;
+    width: 100%;
+    padding-bottom: .2rem;
+    background-repeat: no-repeat;
+    background-color: #fff;
+}
+
+.container {
+    box-sizing: border-box;
+    width: 93%;
+    position: relative;
+    background-image: url(../img/new-bg.png);
+    margin: 0 auto;
+    padding: .2rem;
+    padding-bottom: .2rem;
+    margin-bottom: .2rem;
+}
+
+.contentbg {
+    background-color: #80d5f8;
+    opacity: .5;
+    margin: .2rem;
+    width: 100%;
+    height: 100%;
+}
+
+.img-box {
+    position: absolute;
+    top: -.5rem;
+    left: -.15rem;
+    width: 2.5rem;
+}
+
+.content {
+    display: flex;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    padding-top: .2rem;
+    padding-bottom: .2rem;
+}
+
+.content-box {
+    width: 33.33%;
+    box-sizing: border-box;
+    padding: .1rem;
+}
+.content-box img{
+    height: 1.8rem;
+}
+.content-box p {
+    color: #305b93;
+    text-align: center;
+    margin-top: .1rem;
+}
+
+
+#showoutLayer {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#showoutLayer img {
+    position: fixed;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+body > div.weui-photo-browser-modal.weui-photo-browser-modal-visible > div > div.swiper-wrapper > div.swiper-slide > div > img{
+    margin:0 auto;
+}
+</style>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="contentbg"></div>
+            <div class="img-box">
+                <img src="../img/jingcai-nav-left.png" class="imgMW100" alt="news">
+            </div>
+            <div class="content" id="pageContent">
+            </div>
+        </div>
+        <div id="showoutLayer" style="display: none">
+            <img src="" alt="">
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.0.1/js/swiper.min.js"></script>
+    <script>
+    $(function() {
+        // 750:2253
+        console.log("start");
+        var WIDTH = $(window).width() > 720 ? 720 : $(window).width();
+        var winHEIGHT = $(window).height();
+        console.log(winHEIGHT);
+        var HEIGHT = WIDTH / 750 * 2253;
+        // $(".wrapper").height(HEIGHT);
+        var mtop = HEIGHT * 25 / 100;
+        var cHeight = HEIGHT / 2253 * 1482
+        console.log($(".wrapper").height());
+        // $(".container").height(cHeight);
+        $(".wrapper").css("padding-top", mtop + "px");
+        var imgLIST = [];
+        var imgArr = [];
+        $.ajax({
+            url: 'http://brand.wljhealth.com/activity/2017_my_sun_hero/api/v1/getMoment',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                currentPage: 1,
+                pageSize: 10
+            },
+            success: function(res) {
+                console.log(res)
+                if (res.errcode == 0) {
+                    imgLIST = res.data.list;
+                    if(imgLIST.length<10){
+                        console.log(winHEIGHT);
+                        console.log($('#pageContent').height());
+                        $(".wrapper").height(winHEIGHT-mtop)
+                    }
+                    var htmltxt = '';
+                    for (var i = 0; i < imgLIST.length; i++) {
+                        imgArr.push(imgLIST[i].imgUrl)
+                        htmltxt += '<div class="content-box">\
+                                        <div class="content-img">\
+                                            <img src="' + imgLIST[i].imgUrl + '" alt="" class="imgMW100" data-ajax="' + imgLIST[i].imgUrl + '" data-id="'+i+'">\
+                                            <div class="content-title">\
+                                            </div>\
+                                        </div>\
+                                    </div>';
+                    }
+                    $('#pageContent').html(htmltxt);
+                     $("#pageContent").on('click','div.content-img>img',function(e){
+                        /* Act on the event */
+                        console.log(e);
+                        var idd = $(e.target).data("id")
+                        console.log("img");
+                        var pb1 = $.photoBrowser({
+                          items: imgArr,
+                          initIndex:idd
+                        });
+                        pb1.open();
+                    });
+                } else {
+                    alert("请求结果出错！请重试")
+                }
+            }
+        })
+    })
+    </script>
+</body>
+
+</html>

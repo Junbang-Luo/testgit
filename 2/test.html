@@ -1,0 +1,51 @@
+<Html>
+
+<Head>
+    <pre name="code" class="html">      <script type="text/javascript" src="引入jquery"></script>  
+  
+<--重点是引入hammer.min.js-->  
+<script type="text/javascript" src="http://cdn.bootcss.com/hammer.js/2.0.8/hammer.min.js"></script>  
+<link rel="stylesheet" href="引入bootstrap" type="text/css"></link>  
+</head>  
+  
+<div data-ride="carousel" class="carousel slide" id="carousel-example-generic">  
+        <ol class="carousel-indicators">  
+          <li class="" data-slide-to="0" data-target="#carousel-example-generic"></li>  
+          <li data-slide-to="1" data-target="#carousel-example-generic" class="active"></li>  
+          <li data-slide-to="2" data-target="#carousel-example-generic" class=""></li>  
+        </ol>  
+        <div role="listbox" class="carousel-inner">  
+          <div class="item">  
+            <img alt="First slide" src="static/image/adpicture/adpicture2.png" style="width:100%;height:150px;"  data-holder-rendered="true">  
+          </div>  
+          <div class="item active">  
+            <img alt="Second slide [1140x500]" src="static/image/adpicture/adpicture1.png" style="width:100%;height:150px;" data-holder-rendered="true">  
+          </div>  
+          <div class="item">  
+            <img alt="Third slide [1140x500]" src="static/image/adpicture/adpicture3.jpg" style="width:100%;height:150px;" data-holder-rendered="true">  
+          </div>  
+        </div>  
+        <a data-slide="prev" role="button" href="#carousel-example-generic" >  
+            
+          <span class="sr-only">Previous</span>  
+        </a>  
+        <a data-slide="next" role="button" href="#carousel-example-generic">  
+            
+
+
+          <span class="sr-only">Next</span>  
+        </a>  
+</div>  
+//重点js引入  
+<script>  
+          $(function(){  
+            var myElement= document.getElementById('carousel-example-generic');  
+            var hm=new Hammer(myElement);  
+            hm.on("swipeleft",function(){  
+                $('#carousel-example-generic').carousel('next');  
+            })  
+            hm.on("swiperight",function(){  
+                $('#carousel-example-generic').carousel('prev');  
+            })  
+        })  
+  </script>

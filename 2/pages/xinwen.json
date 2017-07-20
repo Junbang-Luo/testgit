@@ -1,0 +1,20 @@
+	{
+		"error":0,
+		"totalPage":0,
+		"currentPage":1,
+		"pageSize":10,
+		"totalCount":0,
+		"list":	[{
+			"id":"$",
+			"title":"王老吉“高温关爱日”发布会 2017年7月22日，武汉 敬请关注！",
+			"imgUrl":"../img/jingcai-png.png",
+			"linkUrl":"",
+			"note":""
+		},{
+			"id":"$",
+			"title":"王老吉“高温关爱日”发布会 2017年7月22日，武汉 敬请关注！",
+			"imgUrl":"../img/news-png.png",
+			"linkUrl":"",
+			"note":""
+		}]
+	}
